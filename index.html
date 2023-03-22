@@ -15,7 +15,17 @@
     <!-- link Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-    <div id="app">{{ message }}</div>
+    <div id="app">
+
+        <ul>
+
+            <li v-for="email in emails"> {{email}}</li>
+
+        </ul>
+
+        <button @click="getEmails()">Vai</button>
+
+    </div>
 
     <!-- link myjs -->
     <script src="js/script.js"></script>
