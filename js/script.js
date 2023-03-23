@@ -15,16 +15,26 @@ const { createApp } = Vue
       }
     },
 
+    created(){
+        this.getEmails(10);
+    },
+ 
+
     methods: {
 
-        getEmails(){
+        getEmails(quantity){
 
-            for( let i = 0; i < 10; i++){
+            for( let i = 0; i < quantity; i++){
 
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then ((res)=>{
                     
-                    this.emails = res.data.response;
+
+                    const mail = res.data.response;
+                    this.emails.push(mail);
+
                     console.log(res.data.response);
+
+
                 });
 
             }

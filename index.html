@@ -17,13 +17,12 @@
 
     <div id="app">
 
-        <ul>
+        <ul v-show="emails.length == 10">
 
             <li v-for="email in emails"> {{email}}</li>
 
         </ul>
 
-        <button @click="getEmails()">Vai</button>
 
     </div>
 
